@@ -25,6 +25,22 @@ for var in ${arry[*]}; do
 done
 echo $str
 
+
+echo ==============端午放假 爬华山  归来， 看看还能不能把上面的拼接路径实现===================
+pwd=`pwd`
+arry=($(echo $pwd | awk -F '/' '{for(i=1; i <=NF; i++) print $i}'))
+echo ${arry[*]}
+
+mstr=""
+for var in ${arry[*]}; do
+	if [[ -z $mstr ]]; then
+		mstr=$var
+	else
+		mstr=$mstr-$var
+	fi
+done
+echo $mstr
+
 echo ===============gawk 3 外部变量的传递==========================
 VAR=10000 
 echo | awk -v VARIABLE=$VAR '{ print VARIABLE }'
