@@ -54,10 +54,15 @@ echo | awk -v VARIABLE=$VAR '{ print VARIABLE }'
 echo ######### sed #############
 echo '例子===========sed in vim, %s/src/dst/g============='
 #'例子====cat build_config/build_info_C49S.txt | grep 'kuyun:' | sed 's/kuyun://g' | sed 's/;.*//g'==========='
-info=/home/jiangxiujie/mstar-638-tv/Mstar-638/build/build_config/build_info_C49S.txt
+#info=/home/jiangxiujie/mstar-638-tv/Mstar-638/build/build_config/build_info_C49S.txt
+info=test.txt
 echo `sed -n '/kuyun:/p' $info` | gawk -F ':' '{print $2}' | sed 's/;//'
 echo `sed -n '/kuyun:/p' $info` | gawk -F ':' '{print $2}' | sed 's/.$//' #最后一个字符去掉
 
+#sample 2 过滤出所有以#号开头的文件
+sed -n '/^\#/p' $info
+echo "follow is ok, also."
+grep ^\# $info
 
 echo ######## seq #############
 
