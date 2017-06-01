@@ -50,22 +50,13 @@ echo | awk -v VARIABLE=$VAR '{ print VARIABLE }'
 #gawk1
 #gawk1
 #gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
-#gawk1
 #gawk1----2017-5-27-6:00收工---------------------------------------------
 echo ######### sed #############
+echo '例子===========sed in vim, %s/src/dst/g============='
+#'例子====cat build_config/build_info_C49S.txt | grep 'kuyun:' | sed 's/kuyun://g' | sed 's/;.*//g'==========='
+info=/home/jiangxiujie/mstar-638-tv/Mstar-638/build/build_config/build_info_C49S.txt
+echo `sed -n '/kuyun:/p' $info` | gawk -F ':' '{print $2}' | sed 's/;//'
+echo `sed -n '/kuyun:/p' $info` | gawk -F ':' '{print $2}' | sed 's/.$//' #最后一个字符去掉
 
 
 echo ######## seq #############
