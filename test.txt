@@ -4,3 +4,4 @@ fkdlsajflds
 #fdjsaif
 jfeo#
 #jfdlsjafkd
+EXT4=true

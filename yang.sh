@@ -64,6 +64,9 @@ sed -n '/^\#/p' $info
 echo "follow is ok, also."
 grep ^\# $info
 
+#sample 3 使用sed -i命令，实现编辑文本文件
+#例子 sed -i 's/EXT4=.*/EXT4=true/g' ${ENV_CFG_FILE}
+sed -i 's/EXT4=.*/EXT4=true/g' $1
 echo ######## seq #############
 
 
